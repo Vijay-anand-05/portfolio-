@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Animation styles */
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        .animate-slide-in {
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .hover-animate {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-animate:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-white font-sans">
+    <!-- Navbar -->
+    <nav class="bg-gray-900 shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold uppercase tracking-wide text-yellow-400">My Portfolio</div>
+                </div>
+                <div class="hidden md:flex space-x-4">
+                    <a href="#home" class="text-white hover:text-yellow-400">Home</a>
+                    <a href="#projects" class="text-white hover:text-yellow-400">Projects</a>
+                    <a href="#about" class="text-white hover:text-yellow-400">About</a>
+                    <a href="#contact" class="text-white hover:text-yellow-400">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="menu" class="hidden md:hidden bg-gray-800">
+            <a href="#home" class="block px-4 py-2 text-white hover:bg-gray-700">Home</a>
+            <a href="#projects" class="block px-4 py-2 text-white hover:bg-gray-700">Projects</a>
+            <a href="#about" class="block px-4 py-2 text-white hover:bg-gray-700">About</a>
+            <a href="#contact" class="block px-4 py-2 text-white hover:bg-gray-700">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="home" class="text-center py-20 bg-gray-800">
+        <h1 class="text-4xl md:text-6xl font-bold uppercase tracking-wide animate-fade-in">Welcome to My Portfolio</h1>
+        <p class="mt-4 text-lg animate-slide-in">Explore my work and projects</p>
+    </header>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <h2 class="text-3xl font-bold text-center mb-10">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover-animate">
+                <h3 class="text-xl font-bold text-center">Project 1</h3>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover-animate">
+                <h3 class="text-xl font-bold text-center">Project 2</h3>
+            </div>
+            <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover-animate">
+                <h3 class="text-xl font-bold text-center">Project 3</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800">
+        <h2 class="text-3xl font-bold text-center mb-10">About Me</h2>
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-lg animate-slide-in">I am a passionate developer with experience in building web applications. I love creating elegant and functional designs that solve real-world problems.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <h2 class="text-3xl font-bold text-center mb-10">Contact</h2>
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-lg animate-slide-in">Feel free to reach out to me for collaborations or inquiries.</p>
+            <p class="mt-4">Email: <a href="mailto:example@example.com" class="text-yellow-400 hover:underline">example@example.com</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-4 text-center">
+        <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
